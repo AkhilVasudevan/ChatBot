@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chat Bot</title>
+	<link rel="icon" type="image/x-icon" href="static/img/icons.png">
+	<link rel="stylesheet" href="static/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" language="javascript" src="static/js/jquery.js"></script>
+	<script>
+		function validate(e)
+		{
+			var key=e.keyCode || e.which;
+			if (key==13){
+				//send();
+			}
+		}
+		function sentMessage()
+		{
+			var chat_r=document.createElement("div");
+			chat_r.setAttribute("class","chat-r");
+			var sp=document.createElement("div");
+			sp.setAttribute("class","sp");
+			var sp1=document.createElement("div");
+			sp1.setAttribute("class","mess mess-r");
+			var para=document.createElement("p");
+			var text=document.createTextNode($("#message").val());
+			para.appendChild(text);
+			sp1.appendChild(para);
+			chat_r.appendChild(sp);
+			chat_r.appendChild(sp1);
+			document.getElementById("message_container").appendChild(chat_r);
+		}
+		function receivedMessage(text)
+		{
+			var chat_l=document.createElement("div");
+			chat_l.setAttribute("class","chat-l");
+			var mess=document.createElement("div");
+			mess.setAttribute("class","mess");
+			var para=document.createElement("p");
+			var node=document.createTextNode(text);
+			para.appendChild(node);
+			var sp=document.createElement("div");
+			sp.setAttribute("class","sp");
+			mess.appendChild(para);
+			chat_l.appendChild(mess);
+			chat_l.appendChild(sp);
+			document.getElementById("message_container").appendChild(chat_l);
+		}
+		function send()
+		{
+			sentMessage();
+			var sendingText=$("#message").val();
+			document.getElementById("message").value="";
+			$.ajax({
+					data:{message:sendingText},
+					type:'post',
+					url:'/api/chat',
+					success:function(result)
+					{
+						receivedMessage(result);
+					},
+					error:function(result)
+					{
+						console.log(result);
+					}
+			});
+		}
+	</script>
+</head>
+<body style="background-image: url('static/img/back.jpg');">
+	<div class="container">
+		<div class="chat">
+			<div class="chat-header">
+				<div class="profile">
+					<div class="left">
+						<img src="static/img/pp.png" class="pp">
+						<h2>Vipin</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="chat-box" id="message_container">
+
+				<div class='chat-l'>
+					<div class='mess'>
+						<p>Hi, I'm Vipin, YOYO Pizza's chat assistant.</p>
+					</div>
+					<div class='sp'></div>
+				</div>
+
+			</div>
+			
+			<div class="chat-footer">
+				<textarea placeholder="Type a message" name="message" id="message" onkeypress="validate(event)"></textarea>
+				<button onclick="send()"><i class="fa fa-paper-plane" aria-hidden="true" style="font-size:28px;color:whitesmoke" ></i></button>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
