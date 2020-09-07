@@ -1,0 +1,14 @@
+Menu
+Combo Items, Pizza Items, Soft Drinks Items, Other Items
+Menu Items
+Combo Items, Pizza Items, Soft Drinks Items, Other Items
+Combo Items
+Combo-A(Pizza-A,Any Soft Drinks,Pasta) cost-600,Combo-B(Pizza-B,Any Soft Drinks,French Fries/Smilies) cost-58
+Pizza Items
+Pizza-A cost-580,Pizza-B cost-550,Pizza-C cost-500
+Soft Drinks Items
+Pepsi cost-28,Coke cost-28,7UP cost-28,Miranda cost-28
+Other Items
+Pasta cost-45, French Fries cost-40, Smilies cost-40, Garlic Bread cost-35
+Offer
+Buy any two pizza and get a soft drink free
