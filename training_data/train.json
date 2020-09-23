@@ -1,0 +1,70 @@
+{
+  "train": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "items",
+      "patterns": [
+        "Which items do you have?",
+        "What kinds of items are there?",
+        "What do you sell?",
+        "What are your menu items?"
+      ],
+      "responses": [
+        "Menus:Chicken Pizza, Paneer Pizza, Egg Pizza,Mixed Veggies Pizza, Pasta, French Fries, Smilies, Soft Drinks"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with UPI?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and UPI",
+        "We accept most major credit cards, mastercard and any UPIs"
+      ]
+    },
+    {
+      "tag": "delivery",
+      "patterns": [
+        "How long does delivery take?",
+        "When do I get my delivery?"
+      ],
+      "responses": [
+        "Delivery takes 60-80 minutes"
+      ]
+    }
+  ]
+}
